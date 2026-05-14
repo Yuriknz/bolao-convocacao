@@ -68,10 +68,9 @@ export default function FieldView({ field, onOpenModal, onRemove }: Props) {
 
   return (
     <div
-      className="relative flex flex-col justify-around items-center rounded-2xl overflow-hidden py-4"
+      className="relative flex flex-col justify-around items-center rounded-2xl overflow-hidden py-4 w-full md:w-auto"
       style={{
         background: 'linear-gradient(to bottom, #15803d 0%, #166534 50%, #14532d 100%)',
-        minWidth: 260,
         minHeight: 420,
       }}
     >

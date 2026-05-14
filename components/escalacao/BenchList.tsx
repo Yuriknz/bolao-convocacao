@@ -51,7 +51,7 @@ export default function BenchList({ bench, onAddClick, onRemove }: Props) {
         return (
           <div
             key={i}
-            className="h-9 rounded-lg bg-gray-800/60 border border-gray-700 flex items-center gap-2 px-3 group"
+            className="h-9 rounded-lg bg-gray-800/60 border border-gray-700 flex items-center gap-2 px-3"
           >
             <span className={`text-[10px] font-bold w-7 shrink-0 ${POS_COLOR[player.posicao]}`}>
               {player.posicao}
@@ -61,7 +61,7 @@ export default function BenchList({ bench, onAddClick, onRemove }: Props) {
             </span>
             <button
               onClick={() => onRemove(player.id)}
-              className="text-gray-600 hover:text-red-400 opacity-0 group-hover:opacity-100 transition-all shrink-0"
+              className="text-gray-500 hover:text-red-400 active:text-red-400 transition-colors shrink-0"
             >
               <X className="w-3.5 h-3.5" />
             </button>

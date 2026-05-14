@@ -81,32 +81,32 @@ export default function EscalacaoClient({
   return (
     <div className="min-h-screen bg-[#0d1520] text-white">
       {/* Header */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-gray-800">
-        <div>
-          <h1 className="font-bold text-white">{bolaoNome}</h1>
+      <div className="flex items-center justify-between gap-2 px-4 py-3 border-b border-gray-800">
+        <div className="min-w-0">
+          <h1 className="font-bold text-white truncate">{bolaoNome}</h1>
           <p className="text-xs text-gray-500">Convocação de 26 jogadores</p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 shrink-0">
           {/* Contador */}
-          <span className={`text-sm font-bold px-3 py-1 rounded-full ${isComplete ? 'bg-green-500/20 text-green-400' : 'bg-gray-700 text-gray-300'}`}>
-            {picks.length} / 26
+          <span className={`text-xs font-bold px-2 py-1 rounded-full ${isComplete ? 'bg-green-500/20 text-green-400' : 'bg-gray-700 text-gray-300'}`}>
+            {picks.length}/26
           </span>
           {/* Ranking */}
           <Link
             href={`/bolao/${bolaoId}/ranking`}
-            className="flex items-center gap-1.5 text-xs bg-gray-700 hover:bg-gray-600 px-3 py-1.5 rounded-lg transition-colors"
+            className="flex items-center gap-1 text-xs bg-gray-700 hover:bg-gray-600 active:bg-gray-600 px-2.5 py-1.5 rounded-lg transition-colors"
           >
             <Trophy className="w-3.5 h-3.5" />
-            Ranking
+            <span className="hidden sm:inline">Ranking</span>
           </Link>
           {/* Copiar link */}
           {isAdmin && (
             <button
               onClick={handleCopyLink}
-              className="flex items-center gap-1.5 text-xs bg-gray-700 hover:bg-gray-600 px-3 py-1.5 rounded-lg transition-colors"
+              className="flex items-center gap-1 text-xs bg-gray-700 hover:bg-gray-600 active:bg-gray-600 px-2.5 py-1.5 rounded-lg transition-colors"
             >
               <Link2 className="w-3.5 h-3.5" />
-              {copied ? 'Copiado!' : 'Convite'}
+              <span className="hidden sm:inline">{copied ? 'Copiado!' : 'Convite'}</span>
             </button>
           )}
         </div>
